@@ -11,10 +11,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "colors": "^1.4.0",
+    "chalk": "^5.0.0",
+    "chalk-animation": "^1.6.0",
+    "figlet": "^1.5.2",
+    "gradient-string": "^2.0.0",
     "inquirer": "^8.2.0",
-    "node-fetch": "^2.6.7",
-    "prompts": "^2.4.2"
+    "nanospinner": "^1.0.0",
+    "node-fetch": "^2.6.7"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
