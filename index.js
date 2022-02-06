@@ -5,8 +5,8 @@ import inquirer from 'inquirer';
 import chalk from 'chalk';
 import chalkAnimation from 'chalk-animation';
 import fetch from 'node-fetch';
-import { createSpinner } from 'nanospinner';
 import figlet from 'figlet';
+import { createSpinner } from 'nanospinner';
 import gradient from 'gradient-string';
 
 // Global variables
@@ -27,15 +27,26 @@ const quesDifficulties = ['easy', 'medium', 'hard'];
 const quesTypes = ['Multiple Choice', 'True/False'];
 const log = console.log;
 
+figlet('Node Quiz', function (err, data) {
+  if (err) {
+    console.log('Something went wrong...');
+    console.dir(err);
+    return;
+  }
+  console.log(gradient.pastel.multiline(data) + '\n');
+});
+
+await sleep(2000);
+
 const welcomeText = chalkAnimation
-  .rainbow('Welcome to the Node Quiz App!!!')
+  .rainbow('Welcome to the Node Quiz!!!')
   .start();
 
 await sleep(3000);
 
 log(chalk.bgBlue('\nHOW TO PLAY'));
 log(
-  chalk.yellow(
+  chalk.greenBright(
     'Select the Category, amount, difficulty and type of question below'
   )
 );
@@ -145,7 +156,7 @@ const askQuestions = (questionArr) => {
     answersFromUser = answers;
     const spinner = createSpinner().start({
       text: 'Calculating your score...',
-      color: 'magenta',
+      color: 'blue',
     });
 
     sleep(3000).then(() => {
@@ -176,12 +187,13 @@ function endgame() {
         `Your answered ${score} question(s) Correctly and your score is ${score}/${questionsForUser.length}`
       ) + '\n'
     );
+    log(chalk.greenBright(`Thanks for playing :)`));
     process.exit(0);
   });
 }
 
 function decodeHTMLEntities(text) {
-  var entities = [
+  const entities = [
     ['amp', '&'],
     ['apos', "'"],
     ['#x27', "'"],
@@ -194,7 +206,7 @@ function decodeHTMLEntities(text) {
     ['quot', '"'],
   ];
 
-  for (var i = 0, max = entities.length; i < max; ++i)
+  for (let i = 0, max = entities.length; i < max; ++i)
     text = text.replace(
       new RegExp('&' + entities[i][0] + ';', 'g'),
       entities[i][1]
@@ -204,8 +216,8 @@ function decodeHTMLEntities(text) {
 }
 
 function shuffle(array) {
-  let currentIndex = array.length,
-    randomIndex;
+  let currentIndex = array.length;
+  let randomIndex;
 
   // While there remain elements to shuffle...
   while (currentIndex != 0) {
