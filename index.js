@@ -75,10 +75,10 @@ function getQuestionOptions() {
       {
         type: 'number',
         name: 'quesAmount',
-        message: 'How many questions do you want to answer?(5-20)',
+        message: 'How many questions do you want to answer?(5-30)',
         default: 5,
         validate: (value) => {
-          if (value < 5 || value > 20) return 'Enter a number between 5 to 20';
+          if (value < 5 || value > 30) return 'Enter a number between 5 to 30';
           return true;
         },
       },
