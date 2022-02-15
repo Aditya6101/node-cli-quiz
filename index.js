@@ -18,10 +18,17 @@ let score = 0;
 const quesAmount = '10';
 const quesCategories = [
   { id: 9, name: 'General Knowledge' },
-  { id: 18, name: 'Science: Computers' },
+  { id: 17, name: 'Science & Nature' },
+  { id: 18, name: 'Computers' },
+  { id: 30, name: 'Gadgets' },
+  { id: 19, name: 'Mathematics' },
+  { id: 15, name: 'Video Games' },
   { id: 21, name: 'Sports' },
   { id: 23, name: 'History' },
   { id: 22, name: 'Geography' },
+  { id: 24, name: 'Politics' },
+  { id: 27, name: 'Animals' },
+  { id: 28, name: 'Vehicles' },
 ];
 const quesDifficulties = ['easy', 'medium', 'hard'];
 const quesTypes = ['Multiple Choice', 'True/False'];
