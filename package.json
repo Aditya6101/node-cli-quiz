@@ -9,7 +9,12 @@
     "start": "node index.js",
     "dev": "nodemon index.js"
   },
-  "keywords": [],
+  "keywords": [
+    "node-quiz",
+    "quiz-game",
+    "cli-quiz",
+    "cli"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
