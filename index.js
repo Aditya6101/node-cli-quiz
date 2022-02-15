@@ -131,6 +131,11 @@ async function fetchQuestions() {
   spinner.success({ text: 'Here you go...', mark: ':)', color: 'green' });
   spinner.reset();
 
+  if (!questionsForUser.length > 0) {
+    log(chalk.greenBright(`Oops something went wrong :(`));
+    process.exit(1);
+  }
+
   startQuiz();
 }
 
